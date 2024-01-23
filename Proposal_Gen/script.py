@@ -1,4 +1,6 @@
+#%%
 import os
+#%%
 from datetime import datetime
 import json
 import shutil
@@ -9,7 +11,7 @@ import mistune
 input_file_path = 'input.json'
 Year = "2024"
 Semester = "Spring"
-Version = "998"
+Version = "999"
 
 class MyRenderer(mistune.Renderer):
     def list_item(self, text):
