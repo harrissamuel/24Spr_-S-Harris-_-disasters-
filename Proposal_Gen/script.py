@@ -11,7 +11,7 @@ import mistune
 input_file_path = 'input.json'
 Year = "2024"
 Semester = "Spring"
-Version = "000"
+Version = "001"
 
 class MyRenderer(mistune.Renderer):
     def list_item(self, text):
@@ -49,9 +49,6 @@ f"""
 
 ## 1 Objective:  
 {data['Objective']}
-
-![Figure 1: Example figure]({Year}{semester2code[Semester.lower()]}_{data['Version']}.png)
-*Figure 1: Caption*
 
 ## 2 Dataset:  
 {data['Dataset']}

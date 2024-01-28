@@ -25,85 +25,98 @@ data_to_save = \
             """Spring""",
         # -----------------------------------------------------------------------------------------------------------------------
         "project_name":
-            """Mapping Deprived Areas in Low and Middle Income Countries (LMIC) - Part 1""",
+            """Mapping and Predicting Natural Disasters and Their Cost""",
         # -----------------------------------------------------------------------------------------------------------------------
         "Objective":
             """ 
-            The goal of this project is to develop a methodology to map of deprived areas using a range of geospatial data
-            at approximately 100m grid cells. This will help cities understand the spatial pattern of Sustainable Development 
-            Goal 1 (Poverty) and Sustainable Development Goal 11 (sustainable cities and Communities). Want to use a
-            combination of open source geospatial data and satellite imagery to map variations in poverty. Allow for
-            comparisons between cities and determine if models made in one city can be used in another city. 
-            This project could possibly be funded by the European Space Agency (for 8 cities) and theoretically
-            could be expanded to the entire developing world.
+            The first goal of this project is to develop interactive map(s) of disaster data using FEMA (Federal Emergency
+            Management Agency) time series data of over 4800+ data points labeled by state from 1953 to 2023. The second 
+            goal is to merge the FEMA data with NOAA (National Oceanic and Atmospheric Administration) historical state 
+            temperature and precipitation data and disaster cost data to build a predictive model. Ideally, two predictive 
+            models will use features from historical climate data to try and predict disaster classification and 
+            disaster cost. The mapping of historical data and effective predictive models will help state officials use 
+            predicted climate data to produce relevant disaster risk predictions. The main objective is for this project to 
+            underscore past disasters while also helping officials make data-driven preparations for future climate disasters.
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Dataset":
             """
-            Dr. Ryan is going to provide us the data and the location of it. 
+           At this initial stage, three US government datasets will be used: time series data containing individual natural 
+           disasters from FEMA, tabular data containing average temperature and precipitation statistics by state from the NOAA, 
+           and billion-dollar disaster cost data by state from the NOAA. The first dataset is “FEMA Web Disaster Declarations” 
+           and contains “a list of FEMA declaration types and the types of assistance authorized.” More specifically, it has 
+           4800 rows containing columns like ‘Disaster Name’, ‘Declaration Date,’ ‘Incident Type’, and ‘State Name.’ Dates span 
+           from 1953 to 2023. This data will be foundational for initial exploratory data analysis and mapping of historical 
+           disasters in the US by state. The second dataset is statewide NOAA climate data containing columns like temperature 
+           and precipitation from 1895 to 2023. This data can be specified so it is by month and state. I plan to extract average 
+           climate data from at least five different states every month since 1953. The next stage with this data is to merge it 
+           with the FEMA dataset and obtain climate data matched with disaster data to build a predictive model for disaster type. 
+           The initial idea is to use a random forest algorithm to build the classification model. Finally, the last dataset is 
+           statewide NOAA disaster cost data which contains disaster cost data by month and year from 1980-2023. It also contains 
+           columns for the name of the disaster and the type of disaster. Again, I plan to merge this data with the NOAA climate data 
+           and obtain disaster cost data matched with climatic data to build a predictive model for disaster cost. The initial idea 
+           is to use regression to build this predictive model for disaster cost. Links to the data can be found below.
 
-            We have a geospatial data for these three cities: Lagos Nigeria, Accra Ghana and Nairobi Kenya. Each city there is a 
-            series of covariates at 100m grid cells. There are 166 individual tif files that are aligned to the same grid for 
-            the cities. There are approximately 50-60 for each city. These data sets represent infrastructure, social economic 
-            status (SES), facilities and services, physical hazards and assets and others. The number of covariates varies by 
-            city, but there is a set that is common to all of the cities.  
-
-            For each city we are working on extracting Sentinel 2 imagery (10m spatial resolution) for each city. We are running 
-            contextual features for each city. This produces 144 layers from the imagery that map spatial patterns and estimates 
-            of vegetation. These features are calculated on the same grid and in such a way that a 10x10 group of pixels matches 
-            each 100m grid cell. Imagery is collected from Google Earth Engine (Training and validation Data). For Lagos and Accra
-            we have created a training and validation data set at the grid cell level. Training data is Deprived residential,
-            Other Built, and non-built. Model Attributes: Want to be able to model deprivation estimate at the 100m grid cell 
-            level. Test different models to be able to do this. Also, estimate of degree of deprivation, produce a scale of 
-            deprivation so that city governments can set this level themselves and play around with the models.  
+           Dataset 1- Disaster Time Series: 
+           https://www.fema.gov/openfema-data-page/fema-web-disaster-declarations-v1
+           Dataset 2- Climatic Data: 
+           https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/time-series/41/tavg/1/12/1895-2023
+           Dataset 3- Disaster Cost Data:
+           https://www.ncei.noaa.gov/access/billions/state-summary/TX
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Rationale":
             """
-            This project is going to help agencies to tackle poverty and help countries.
+             The rationale of this project is to provide a complex understanding of past disasters in US states and help 
+             specified states stay prepared for natural disasters in the future. This project should provide an idea 
+             about the quantity of funds and resources that should be devoted to natural disasters as human-caused climate
+             change continues. 
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Approach":
             """
             I plan on approaching this capstone through several steps.  
 
-            1. Automate data capturing from Google Earth Engine (Python code in the engine).
-            2. Work on the covariate features importance.  
-            3. Use covariate features to model degree of poverty (Classical Models).
-            4. Use a model developed in on city and apply it to other cities (Transfer Learning)
-            5. Combine satellite images with covariate features.  
+            1. Data cleaning/wrangling and exploratory data analysis with FEMA data (R/Python) 
+            2. Mapping and plotting FEMA data (R)   
+            3. Data wrangling and cleaning to combine data sets (Python)
+            4. Build/test models + feature engineering (ML with scikit-learn in Python)
+            5. Produce final predictive results and combine them with historical results  
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Timeline":
             """
             This a rough time line for this project:  
 
-            - (3 Weeks) Data Automation.  
-            - (3 Weeks) Feature Importance  
-            - (4 Weeks) Modeling  
-            - (2 Weeks) Combine satellite images with covariate features  
-            - (1 Weeks) Compiling Results  
+            - (2 Weeks) Data Processing and Analysis
+            - (2 Weeks) Mapping and Plotting
+            - (2 Weeks) Combine Datasets via Data Wrangling
+            - (5 Weeks) Modeling + Feature Engineering 
+            - (1 Weeks) Combining Results  
             - (1 Weeks) Writing Up a paper and submission
             - (1 Weeks) Final Presentation  
+
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Expected Number Students":
             """
-            For this project maximum 4 students can work on it.  
+            The expected number of students is one.  
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Possible Issues":
             """
-            The challenge is on data analysis part , find a good features and train a decent model.
+            The challenge will be data wrangling and effectively combining the datasets using dates and locations. 
+            More challenges will exist in creating good predictive models since there are a limited number of 
+            climatic features and these features are not guaranteed to be good predictors.
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Proposed by": "Samuel Harris",
         "Proposed by email": "samharris@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gmail.com",
-        "github_repo": "https://github.com/amir-jafari/Capstone",
+        "instructor": "Edwin Lo",
+        "instructor_email": "edwinlo@gwu.edu",
+        "github_repo": "https://github.com/harrissamuel/24Spr_-S-Harris-_-projectName-.git",
         # -----------------------------------------------------------------------------------------------------------------------
-    }
+     }
 os.makedirs(
     os.getcwd() + f'{os.sep}Proposals{os.sep}{data_to_save["Year"]}{semester2code[data_to_save["Semester"].lower()]}{os.sep}{data_to_save["Version"]}',
     exist_ok=True)

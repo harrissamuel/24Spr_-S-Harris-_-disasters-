@@ -116,7 +116,7 @@ data_to_save = \
         "instructor_email": "edwinlo@gwu.edu",
         "github_repo": "https://github.com/harrissamuel/24Spr_-S-Harris-_-projectName-.git",
         # -----------------------------------------------------------------------------------------------------------------------
-     }
+    }
 os.makedirs(
     os.getcwd() + f'{os.sep}Proposals{os.sep}{data_to_save["Year"]}{semester2code[data_to_save["Semester"].lower()]}{os.sep}{data_to_save["Version"]}',
     exist_ok=True)
