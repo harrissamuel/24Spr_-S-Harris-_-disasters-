@@ -1,6 +1,6 @@
 
 # Capstone Proposal
-## Mapping and Predicting Natural Disasters and Their Cost
+## Analyzing Disaster Trends and Predicting Death Toll
 ### Proposed by: Samuel Harris
 #### Email: samharris@gwu.edu
 #### Advisor: Edwin Lo
@@ -10,69 +10,61 @@
 
 ## 1 Objective:  
  
-            The first goal of this project is to develop interactive map(s) of disaster data using FEMA (Federal Emergency
-            Management Agency) time series data of over 4800+ data points labeled by state from 1953 to 2023. The second 
-            goal is to merge the FEMA data with NOAA (National Oceanic and Atmospheric Administration) historical state 
-            temperature and precipitation data and disaster cost data to build a predictive model. Ideally, two predictive 
-            models will use features from historical climate data to try and predict disaster classification and 
-            disaster cost. The mapping of historical data and effective predictive models will help state officials use 
-            predicted climate data to produce relevant disaster risk predictions. The main objective is for this project to 
-            underscore past disasters while also helping officials make data-driven preparations for future climate disasters.
+            The first goal of this project is to analyze and understand disaster event statistics in comparison with world 
+            development indicators by country since 2000. The second goal is to build a regression model that uses features 
+            from each disaster event and world development indicators to predict the total death toll. This project will help 
+            to understand how disasters impact rich and poor countries differently while also providing a methodology to aid 
+            in future disaster management and response. The UN underscores the importance of understanding disaster risk through 
+            key agendas like the SENDAI Framework for Disaster Risk Reduction (SFDRR).
             
 
 ## 2 Dataset:  
 
-           At this initial stage, three US government datasets will be used: time series data containing individual natural 
-           disasters from FEMA, tabular data containing average temperature and precipitation statistics by state from the NOAA, 
-           and billion-dollar disaster cost data by state from the NOAA. The first dataset is “FEMA Web Disaster Declarations” 
-           and contains “a list of FEMA declaration types and the types of assistance authorized.” More specifically, it has 
-           4800 rows containing columns like ‘Disaster Name’, ‘Declaration Date,’ ‘Incident Type’, and ‘State Name.’ Dates span 
-           from 1953 to 2023. This data will be foundational for initial exploratory data analysis and mapping of historical 
-           disasters in the US by state. The second dataset is statewide NOAA climate data containing columns like temperature 
-           and precipitation from 1895 to 2023. This data can be specified so it is by month and state. I plan to extract average 
-           climate data from at least five different states every month since 1953. The next stage with this data is to merge it 
-           with the FEMA dataset and obtain climate data matched with disaster data to build a predictive model for disaster type. 
-           The initial idea is to use a random forest algorithm to build the classification model. Finally, the last dataset is 
-           statewide NOAA disaster cost data which contains disaster cost data by month and year from 1980-2023. It also contains 
-           columns for the name of the disaster and the type of disaster. Again, I plan to merge this data with the NOAA climate data 
-           and obtain disaster cost data matched with climatic data to build a predictive model for disaster cost. The initial idea 
-           is to use regression to build this predictive model for disaster cost. Links to the data can be found below.
+            Two databases will be used, the Emergency Events Database (EM-DAT) and the World Bank’s World Development Indicators 
+            Database. The EM-DAT contains tabular data with 15,573 rows of disaster events around the world from 2000 onward. 
+            There are 46 columns in the dataset ranging from disaster type, region, start year and month, latitude and longitude, 
+            magnitude, total damage, number affected, and total deaths. The dataset is comprehensive in providing basic 
+            information about each disaster event. The World Bank’s World Development Indicators Database contains relevant 
+            indicator statistics by country since 2000. These include statistics like GDP per Capita and infant mortality
+            along with other technological and poverty indicators. The plan is to append the World Bank data to the disaster 
+            data to place each disaster in the context of the given country’s economic, social, and health conditions. 
+            Combining the datasets will allow for more grouping and aggregating and ultimately reveal more complicated patterns
+            with disaster events. The World Bank Data will also add relevant features to predict the target variable of total 
+            deaths in a regression model.  
 
-           Dataset 1- Disaster Time Series: 
-           https://www.fema.gov/openfema-data-page/fema-web-disaster-declarations-v1
-           Dataset 2- Climatic Data: 
-           https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/time-series/41/tavg/1/12/1895-2023
-           Dataset 3- Disaster Cost Data:
-           https://www.ncei.noaa.gov/access/billions/state-summary/TX
+            Dataset 1- Emergency Events Database: Disaster Data since 2000: 
+            https://doc.emdat.be/docs/data-structure-and-content/emdat-public-table/
+
+            Dataset 2- World Bank: World Development Indicators since 2000:
+            https://databank.worldbank.org/indicator/NY.GDP.PCAP.CD/1ff4a498/Popular-Indicators#
             
 
 ## 3 Rationale:  
 
-             The rationale of this project is to provide a complex understanding of past disasters in US states and help 
-             specified states stay prepared for natural disasters in the future. This project should provide an idea 
-             about the quantity of funds and resources that should be devoted to natural disasters as human-caused climate
-             change continues. 
+            The rationale of this project is to provide a complex understanding of the impacts of past disasters around the 
+            world and help countries stay prepared for disasters in the future.
             
 
 ## 4 Approach:  
 
             I plan on approaching this capstone through several steps.  
 
-            1. Data cleaning/wrangling and exploratory data analysis with FEMA data (R/Python) 
-            2. Mapping and plotting FEMA data (R)   
-            3. Data wrangling and cleaning to combine data sets (Python)
+            1. Finding data and data loading (Python)
+            2. Data cleaning/wrangling and data analysis (R/Python) 
+            3. Mapping and visualizations of analysis (R/Python) 
             4. Build/test models + feature engineering (ML with scikit-learn in Python)
-            5. Produce final predictive results and combine them with historical results  
+            5. Produce final predictive results and combine them with historical results
+ 
             
 
 ## 5 Timeline:  
 
-            This a rough time line for this project:  
+            This is a rough timeline for this project:  
 
-            - (2 Weeks) Data Processing and Analysis
-            - (2 Weeks) Mapping and Plotting
-            - (2 Weeks) Combine Datasets via Data Wrangling
-            - (5 Weeks) Modeling + Feature Engineering 
+            - (1 Weeks) Data Loading
+            - (3 Weeks) Data Processing and Analysis
+            - (2 Weeks) Visualizations and Mapping
+            - (6 Weeks) Modeling + Feature Engineering 
             - (1 Weeks) Combining Results  
             - (1 Weeks) Writing Up a paper and submission
             - (1 Weeks) Final Presentation  
@@ -87,8 +79,7 @@
 ## 7 Possible Issues:  
 
             The challenge will be data wrangling and effectively combining the datasets using dates and locations. 
-            More challenges will exist in creating good predictive models since there are a limited number of 
-            climatic features and these features are not guaranteed to be good predictors.
+            More challenges will exist in feature engineering and training an effective model.
             
 
 
