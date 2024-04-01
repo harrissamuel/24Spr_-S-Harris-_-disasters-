@@ -19,13 +19,12 @@ if selected_tab == "Tab 1":
     else:
         st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
 
-    ### Plot 2
-        # Plot 1: Death map with year slider
+    # Plot 2: Deaths Map with year slider
     html_file_path = "/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/deaths_map_with_year_slider" 
     if os.path.exists(html_file_path):
         with open(html_file_path, "r") as f:
             plotly_map_html = f.read()
-        st.components.v1.html(plotly_map_html, width=1000, height=800)
+        st.components.v1.html(plotly_map_html, width=800, height=600)
     else:
         st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
         
@@ -33,7 +32,7 @@ elif selected_tab == "Tab 2":
     st.title("Temporal and Spatial Analysis")
     st.write("This is the content of Tab 2.")
 
-    ######## Plot 1: Box plot of Affected by region
+    # Plot 1: Box plot of Affected by region
     html_file_path = "/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Affected_by_Region_(without outliers)" 
     if os.path.exists(html_file_path):
         with open(html_file_path, "r") as f:
@@ -42,7 +41,7 @@ elif selected_tab == "Tab 2":
     else:
         st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
 
-    ######### Plot 2: Box plot of Cost by region
+        # Plot 2: Box plot of Cost by region
     html_file_path = "/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without outliers)" 
     if os.path.exists(html_file_path):
         with open(html_file_path, "r") as f:
@@ -50,7 +49,7 @@ elif selected_tab == "Tab 2":
         st.components.v1.html(plotly_map_html, width=800, height=600)
     else:
         st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
-    ######### Plot 3: Box plot of Deaths by region
+    # Plot 3: Box plot of Deaths by region
     html_file_path = "/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without outliers)" 
     if os.path.exists(html_file_path):
         with open(html_file_path, "r") as f:
@@ -59,17 +58,17 @@ elif selected_tab == "Tab 2":
     else:
         st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
 
-    ######### Plot 4: Box plot of Deaths by region (africa)
-    html_file_path = "/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Deaths_by_Subregion(africa)_(without outliers)" 
-    if os.path.exists(html_file_path):
-        with open(html_file_path, "r") as f:
-            plotly_map_html = f.read()
-        st.components.v1.html(plotly_map_html, width=800, height=600)
-    else:
-        st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
-
-    ######### Plot 5: Box plot of Deaths by region (asia)
+        # Plot 4: Box plot of Deaths by region (asia)
     html_file_path = "/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Deaths_by_Subregion(asia)_(without outliers)" 
+    if os.path.exists(html_file_path):
+        with open(html_file_path, "r") as f:
+            plotly_map_html = f.read()
+        st.components.v1.html(plotly_map_html, width=800, height=600)
+    else:
+        st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
+
+       # Plot 5: Box plot of Deaths by region (africa)
+    html_file_path = "/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Deaths_by_Subregion(africa)_(without outliers)" 
     if os.path.exists(html_file_path):
         with open(html_file_path, "r") as f:
             plotly_map_html = f.read()
