@@ -48,3 +48,11 @@ elif selected_tab == "Tab 2":
 elif selected_tab == "Tab 3":
     st.title("World Bank")
     st.write("This is the content of Tab 3.")
+    # Plot 1: Disasters by Development Map
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/development_map_with_tab.html")
+
+    # Plot 2: Deaths by Development Type and Disaster
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/bar_chart_with_development_category_and_disaster_type.html")
+
+    # Plot 3: Timeline of Deaths by development Type
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/bar_chart_with_start_year_and_development_category.html")
