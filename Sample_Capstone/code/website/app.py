@@ -27,7 +27,7 @@ if selected_tab == "Tab 1":
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/deaths_map_with_year_slider")
         
 elif selected_tab == "Tab 2":
-    st.title("Temporal and Spatial Analysis")
+    st.title("Temporal and Spatial Disaster Analysis")
     st.write("This is the content of Tab 2.")
 
     # Plot 1: Box plot of Affected by region
@@ -46,7 +46,7 @@ elif selected_tab == "Tab 2":
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Deaths_by_Subregion(asia)_(without outliers)")
 
 elif selected_tab == "Tab 3":
-    st.title("World Bank")
+    st.title("World Bank Disaster Analysis")
     st.write("This is the content of Tab 3.")
     # Plot 1: Disasters by Development Map
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/development_map_with_tab.html")
