@@ -55,7 +55,7 @@ elif selected_tab == "Tab 3":
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/bar_chart_with_development_category_and_disaster_type.html")
 
     # Plot 3: Timeline of Deaths by development Type
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/bar_chart_with_start_year_and_development_category.html")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/line_plot_with_start_year_and_development_category.html")
 
     # Plot 4: Risk Score
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/risk_score_map.html")
