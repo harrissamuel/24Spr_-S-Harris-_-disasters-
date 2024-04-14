@@ -31,19 +31,22 @@ elif selected_tab == "Tab 2":
     st.write("This is the content of Tab 2.")
 
     # Plot 1: Box plot of Affected by region
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Affected_by_Region_(without outliers)")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Affected_by_Region_(without_outliers)")
 
     # Plot 2: Box plot of Cost by region
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without outliers)")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without_outliers)")
 
     # Plot 3: Box plot of Deaths by region
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Deaths_by_Region_(without outliers)")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Region_(without_outliers)")
 
     # Plot 4: Box plot of Deaths by region (asia)
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Deaths_by_Subregion(africa)_(without outliers)")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(africa)_(without_outliers)")
 
     # Plot 5: Box plot of Deaths by region (africa)
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Boxplot_of_Total Deaths_by_Subregion(asia)_(without outliers)")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(asia)_(without_outliers)")
+
+    # Plot 6: Box plot of Deaths by region (americas)
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(americas)_(without_outliers)")
 
 elif selected_tab == "Tab 3":
     st.title("World Bank Disaster Analysis")
