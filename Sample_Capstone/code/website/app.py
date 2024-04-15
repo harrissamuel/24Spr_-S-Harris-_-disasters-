@@ -27,12 +27,12 @@ def display_html(html_file_path):
 
 # Create tabs
 with st.sidebar:
-    selected_tab = st.radio("Navigation", ["Tab 1", "Tab 2", "Tab 3"])
+    selected_tab = st.radio("Navigation", ["General", "Temporal and Spatial Exploratory Analysis", "World Bank"])
 
 # Display content based on selected tab
-if selected_tab == "Tab 1":
+if selected_tab == "General":
     st.title("General")
-    st.write("This is the content of Tab 1.")
+    st.write("General Analysis of EM DAT Disaster Data.")
 
     st.write("The following bar chart shows significant deaths by year and region. Specifcally, \
             it highlights large mass casualty events in both the Americas and Asia.")
@@ -45,9 +45,9 @@ if selected_tab == "Tab 1":
     # Plot 2: Deaths Map with year slider
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/deaths_map_with_year_slider")
         
-elif selected_tab == "Tab 2":
-    st.title("Temporal and Spatial Disaster Analysis")
-    st.write("This is the content of Tab 2.")
+elif selected_tab == "Temporal and Spatial Exploratory Analysis":
+    st.title("Temporal and Spatial")
+    st.write("Temporal and Spatial Analysis of EM DAT Disaster Data.")
 
     # Plot 1: Box plot of Affected by region
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Affected_by_Region_(without_outliers)")
@@ -73,9 +73,9 @@ elif selected_tab == "Tab 2":
     # Plot 8: Lengths of Disaster
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/length_of_disaster_plot")
 
-elif selected_tab == "Tab 3":
+elif selected_tab == "World Bank":
     st.title("World Bank Disaster Analysis")
-    st.write("This is the content of Tab 3.")
+    st.write("Disaster analysis based on EM DAT Data and World Bank variables.")
     # Plot 1: Individual Variables with Death
     display_html('/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Subplots_WB')
 
