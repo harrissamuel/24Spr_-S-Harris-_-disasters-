@@ -27,23 +27,56 @@ def display_html(html_file_path):
 
 # Create tabs
 with st.sidebar:
-    selected_tab = st.radio("Navigation", ["General", "Temporal and Spatial Exploratory Analysis", "World Bank"])
+    selected_tab = st.radio("Navigation", ["Overview", "Temporal and Spatial Exploratory Analysis", "World Bank"])
 
 # Display content based on selected tab
-if selected_tab == "General":
-    st.title("General")
-    st.write("General Analysis of EM DAT Disaster Data.")
+if selected_tab == "Overview":
+    st.title("Contextualizing Disasters: Analyzing Disaster Events by Development")
+    st.subheader("Introduction and Objective:")
 
-    st.write("The following bar chart shows significant deaths by year and region. Specifcally, \
-            it highlights large mass casualty events in both the Americas and Asia.")
+    st.write("Since 2000, 1.7 million deaths have occurred from disaster events around the world. \
+             Often, disasters are overlooked as random events that wreak havoc on populations and are uncontrollable. \
+             However, despite disasters being almost impossible to entirely prevent due to their inherent randomness, \
+             disasters' impact on population can be mitigated through effective response, recovery, and preparedness efforts.")
+    
+    st.write( "This analysis aims to combine world disaster event data with World Bank country indicator data \
+             to place historical disasters events in a given country's developmental context. \
+             Understanding historical disasters by their type, impact, and development level is crucial \
+             to gain information about how different disasters affect different countries. From this information, \
+             officials can set goals for disaster management and adequately assess disaster risk comparatively by country. \
+             The goal of this analysis is to mitigate disasters' impact by increasing awareness about disasters and providing relevant resources \
+             to disaster management officials.")
+    
+    st.subheader("Datasets:")
+
+    st.write("Two datasets are used in this analysis: the Emergency Events Database (EM-DAT) and the World Bank’s World Development Indicators Database. \
+            The EM-DAT contains tabular data with 15,573 rows of disaster events around the world from 2000 onward. \
+            There are 46 columns in the dataset ranging from disaster type, region, start year and month, latitude and longitude, magnitude, \
+            total damage, number affected, and total deaths. The dataset is comprehensive in providing basic information about each disaster event. \
+            The World Bank’s World Development Indicators Database contains relevant indicator statistics by country since 2000. Statistics used in this analysis \
+            include GDP per Capita, infant mortality rate, life expectancy, electricity percentage, and tonnes of CO2 emitted. \
+            These statistics were chosen because they give a good overview of a given country's development while also being widely available for almost every country. \
+            Combining the World Bank data with the disaster data places each disaster event in the context of the \
+            given country’s economic, technological, and health conditions.")
+    
+    st.subheader("EM DAT Data:")
+
+
+    st.write("To get an idea about how we can use the EM DAT data to visualize disasters impact, consider the bar chart below which shows \
+            deaths by year and region. Specifcally, \
+            it highlights large mass casualty years in both the Americas and Asia.")
     # Plot 1: Bar chart of deaths by year and region
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/stacked_bar_chart_of_deaths_by_year_and_region.html")
 
-    st.write("Next, the following map shows disaster deaths by country and year. In addition, it highlights the disaster \
-             type that caused the most deaths")
+    st.write("Next, we can take it a step further and create an interactive map showing disaster deaths by country and year. In addition, the map highlights the disaster \
+             type that caused the most deaths in a given year.")
 
     # Plot 2: Deaths Map with year slider
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/deaths_map_with_year_slider")
+
+    st.write("The map represents a good way to parse the EM DAT data spatially and temporally. Before combining the \
+             the EM DAT data with the world bank indicator variables, let's further analyze the EM DAT data \
+             spatially and temporally in the next section to better understand disaster events in the 21st century more broadly.")
         
 elif selected_tab == "Temporal and Spatial Exploratory Analysis":
     st.title("Temporal and Spatial")
