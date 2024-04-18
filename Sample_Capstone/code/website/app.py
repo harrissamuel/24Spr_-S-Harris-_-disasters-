@@ -2,7 +2,9 @@ import streamlit as st
 import os
 
 # Function to display HTML file if exists
-def display_html(html_file_path):
+def display_html(html_file_name):
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    html_file_path = os.path.join(current_directory, html_file_name)
     if os.path.exists(html_file_path):
         with open(html_file_path, "r") as f:
             plotly_map_html = f.read()
@@ -66,13 +68,13 @@ if selected_tab == "Overview":
             deaths by year and region. Specifcally, \
             it highlights large mass casualty years in both the Americas and Asia.")
     # Plot 1: Bar chart of deaths by year and region
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/stacked_bar_chart_of_deaths_by_year_and_region.html")
+    display_html("stacked_bar_chart_of_deaths_by_year_and_region.html")
 
     st.write("Next, we can take it a step further and create an interactive map showing disaster deaths by country and year. In addition, the map highlights the disaster \
              type that caused the most deaths in a given year.")
 
     # Plot 2: Deaths Map with year slider
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/deaths_map_with_year_slider")
+    display_html("deaths_map_with_year_slider")
 
     st.write("The map represents a good way to parse the EM DAT data spatially and temporally. Before combining the \
              the EM DAT data with the world bank indicator variables, let's further analyze the EM DAT data \
@@ -90,7 +92,7 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
              Asia particulary stands out with more disasters affecting large amounts of people than any other reigon.")
 
     # Plot 1: Box plot of Affected by region
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Affected_by_Region_(without_outliers)")
+    display_html("Violinplot_of_Total Affected_by_Region_(without_outliers)")
 
     st.write("The next plot shows \
              the adjusted cost for disaster events by reigon. \
@@ -100,50 +102,49 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
              in further discussions about disaster events. ")
     
     # Plot 2: Box plot of Cost by region
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without_outliers)")
+    display_html("Violinplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without_outliers)")
 
-    st.write("Finally, the last plot by region shows the distrubution of deaths in disasrer events. We can see \
-             that Asia, Africa, and the Americas have the highest median disaster events. \
-             We break it down further by subreigion next to learn more.")
+    st.write("Finally, the last plot by region shows the distribution of deaths in disaster events. We can see that Asia, Africa, and the Americas have the highest median disaster events. We break it down further by subregion next to learn more.")
     
     # Plot 3: Box plot of Deaths by region
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Region_(without_outliers)")
+    display_html("Violinplot_of_Total Deaths_by_Region_(without_outliers)")
 
     # Plot 4: Box plot of Deaths by region (asia)
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(asia)_(without_outliers)")
+    display_html("Violinplot_of_Total Deaths_by_Subregion(asia)_(without_outliers)")
 
     # Plot 5: Box plot of Deaths by region (africa)
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(africa)_(without_outliers)")
+    display_html("Violinplot_of_Total Deaths_by_Subregion(africa)_(without_outliers)")
 
     # Plot 6: Box plot of Deaths by region (americas)
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(americas)_(without_outliers)")
+    display_html("Violinplot_of_Total Deaths_by_Subregion(americas)_(without_outliers)")
 
     # Plot 7: Deaths by Month
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/disasters_by_month")
+    display_html("disasters_by_month")
 
     # Plot 8: Lengths of Disaster
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/length_of_disaster_plot")
+    display_html("length_of_disaster_plot")
 
 elif selected_tab == "World Bank":
     st.title("World Bank Disaster Analysis")
     st.write("Disaster analysis based on EM DAT Data and World Bank variables.")
     # Plot 1: Individual Variables with Death
-    display_html('/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Subplots_WB')
+    display_html("Subplots_WB")
 
     # Plot 2: Disasters by Development Map
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/development_map_with_tab.html")
+    display_html("development_map_with_tab.html")
 
     # Plot 3: Deaths by Development Type and Disaster
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/bar_chart_with_development_category_and_disaster_type.html")
+    display_html("bar_chart_with_development_category_and_disaster_type.html")
 
     # Plot 4: Timeline of Deaths by development Type
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/line_plot_with_start_year_and_development_category.html")
+    display_html("line_plot_with_start_year_and_development_category.html")
 
     # Plot 5: Number of disasters by development type
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/number_of_disaster_development_category.html")
+    display_html("number_of_disaster_development_category.html")
 
     # Plot 6: Median Deaths by Development scores 
-    display_html('/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/median_total_deaths_by_dev_score.html')
+    display_html("median_total_deaths_by_dev_score.html")
 
     # Plot 7: Risk Score
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/risk_score_map.html")
+    display_html("risk_score_map.html")
+
