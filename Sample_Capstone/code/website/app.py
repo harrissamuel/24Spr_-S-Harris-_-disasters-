@@ -79,23 +79,41 @@ if selected_tab == "Overview":
              spatially and temporally in the next section to better understand disaster events in the 21st century more broadly.")
         
 elif selected_tab == "Temporal and Spatial Exploratory Analysis":
-    st.title("Temporal and Spatial")
-    st.write("Temporal and Spatial Analysis of EM DAT Disaster Data.")
+    st.title("Spatial Anlaysis:")
+    st.write("To visualize the impact of disasters spatially, it still could be useful to show total deaths by reigon. \
+             However, due to outlier disaster events (like the 2004 Boxing Day Tsunami), these measures may be inflated to extent where they are not useful \
+             for meausuring the typical disaster in the region. For this reason, violin/box plots are shown below \
+             to visualize the distrubution of typical disasters (with major outliers dropped). ")
+    
+    st.write("The first plot shows \
+             the number of total affected by reigon. \
+             Asia particulary stands out with more disasters affecting large amounts of people than any other reigon.")
 
     # Plot 1: Box plot of Affected by region
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Affected_by_Region_(without_outliers)")
 
+    st.write("The next plot shows \
+             the adjusted cost for disaster events by reigon. \
+             The Americas and Europe in this case seem to have higher costs for disaster events. \
+             However, because there are more than 10,000 missing values for cost, it is easy to determine that there is a bias in \
+             in the data where only counties with insurance are reporting these cost statistics. Thus, cost will not be used \
+             in further discussions about disaster events. ")
+    
     # Plot 2: Box plot of Cost by region
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without_outliers)")
 
+    st.write("Finally, the last plot by region shows the distrubution of deaths in disasrer events. We can see \
+             that Asia, Africa, and the Americas have the highest median disaster events. \
+             We break it down further by subreigion next to learn more.")
+    
     # Plot 3: Box plot of Deaths by region
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Region_(without_outliers)")
 
     # Plot 4: Box plot of Deaths by region (asia)
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(africa)_(without_outliers)")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(asia)_(without_outliers)")
 
     # Plot 5: Box plot of Deaths by region (africa)
-    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(asia)_(without_outliers)")
+    display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(africa)_(without_outliers)")
 
     # Plot 6: Box plot of Deaths by region (americas)
     display_html("/Users/samharris/Desktop/Capstone/24Spr_-S-Harris-_-disasters-/Sample_Capstone/code/website/Violinplot_of_Total Deaths_by_Subregion(americas)_(without_outliers)")
