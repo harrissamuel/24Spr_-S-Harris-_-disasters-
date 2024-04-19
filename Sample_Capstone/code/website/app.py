@@ -81,9 +81,10 @@ if selected_tab == "Overview":
              spatially and temporally in the next section to better understand disaster events in the 21st century more broadly.")
         
 elif selected_tab == "Temporal and Spatial Exploratory Analysis":
-    st.title("Spatial Anlaysis:")
+    st.title("Temporal and Spatial Exploratory Analysis:")
+    st.subheader("Spatial Analysis:")
     st.write("To visualize the impact of disasters spatially, it still could be useful to show total deaths by reigon. \
-             However, due to outlier disaster events (like the 2004 Boxing Day Tsunami), these measures may be inflated to extent where they are not useful \
+             However, due to outlier disaster events (like the 2004 Boxing Day Tsunami), these measures may be right skewed to extent where they are not useful \
              for meausuring the typical disaster in the region. For this reason, violin/box plots are shown below \
              to visualize the distrubution of typical disasters (with major outliers dropped). ")
     
@@ -104,7 +105,8 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
     # Plot 2: Box plot of Cost by region
     display_html("Violinplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without_outliers)")
 
-    st.write("Finally, the last plot by region shows the distribution of deaths in disaster events. We can see that Asia, Africa, and the Americas have the highest median disaster events. We break it down further by subregion next to learn more.")
+    st.write("Finally, the last plot by region shows the distribution of deaths in disaster events. We can see that Asia, Africa, and the Americas have the highest median disaster events. \
+             We break it down further by subregion next to learn more.")
     
     # Plot 3: Box plot of Deaths by region
     display_html("Violinplot_of_Total Deaths_by_Region_(without_outliers)")
@@ -117,6 +119,11 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
 
     # Plot 6: Box plot of Deaths by region (americas)
     display_html("Violinplot_of_Total Deaths_by_Subregion(americas)_(without_outliers)")
+    st.write("From the subregion plots we see that median disaster events are high in Southern Asia, Sub Saharan Africa, \
+             and Latin America and the Carribean. Spatially, these subregions are all close to the equator, \
+             indicating a spatial trend for disaster event deaths.")
+    
+    st.subheader("Temporal Analysis:")
 
     # Plot 7: Deaths by Month
     display_html("disasters_by_month")
@@ -128,8 +135,22 @@ elif selected_tab == "World Bank":
     st.title("World Bank Disaster Analysis")
     st.write("Disaster analysis based on EM DAT Data and World Bank variables.")
     # Plot 1: Individual Variables with Death
-    display_html("Subplots_WB")
+    #display_html("Subplots_WB")
+    st.write("By merging the datsets by country and year, values for a country's GDP per capita, infant mortality rate, \
+             life expectancy, electricity percentage, and tonnes of CO2 emitted were applied each disaster event. \
+             This provided each disaster event with context of the country in which it happened. \
+             Next, by calculating the decile for each variable and adding them together, I was able to create \
+             an overall development score for each country and year on a scale from 5-50. \
+             Principal component analysis was able prescribe how to add the variables together into one \
+             composite indicator for development (infant mortality was inverted for the sum). The equation is as follows, where D is the decile function:")
+    st.latex(r'''
+    Development \space Score = D(lf \space exp) + D(imort, decreasing = True) + D(co2) + D(electy) + D(GDP)
+    ''') 
 
+    st.write("Next, the development score was seperated into 3 categories: least developed, developing, \
+             and developed. Based on the categories, the following plots were created showing \
+             how disasters differ by development score.")
+    
     # Plot 2: Disasters by Development Map
     display_html("development_map_with_tab.html")
 
@@ -145,6 +166,30 @@ elif selected_tab == "World Bank":
     # Plot 6: Median Deaths by Development scores 
     display_html("median_total_deaths_by_dev_score.html")
 
+    st.write("From the median deaths by development score plot, we are able to see that median deaths go down \
+        as the development score increases. Specifically, there seem to be some dramatic drops in median deaths \
+        as we cross over from each development category at 20 and 35 respectively. Additionally, the median disaster \
+        event in a least developed country is at least three times more deadly than a disaster in a developed country.")
+
+    st.subheader("Risk Score:")
+
+    st.write("Finally, in an attempt to develop a degree of risk for a certain disaster in a country, a risk score was \
+        developed. This score of risk by disaster type and country is based on the historical data in both the EM \
+        DAT and World Bank datasets. It is modeled after the Risk Index used by FEMA for counties in the US. The \
+        formula for FEMA's index is")
+    st.latex(r''' Risk \space Index = \frac{Expected \space Annual \space Loss × Social \space Vulnerability}{Community \space Resilience}.''')
+
+    st.write("For calculating this project's countrywide disaster risk score, 3 variables were used: impact, frequency, \
+        and development score. The first 2 variables correspond to FEMA's 'Expected Annual Loss,' while the development \
+        score inversely corresponds to 'Social Vulnerability.' These 3 variables gave the best opportunity to replicate \
+        FEMA's methodology with the data available. The variables were calculated, normalized to a 1-100 scale, and then combined in the \
+        following way to calculate the risk score.")
+
+    st.latex(r'''Risk \space Score= .3× Frequency+ .5×Impact  +  .2×Development \space Score''')
+
+    st.write("So, the risk score highlights mass casualty and frequent disaster types in addition to the given country's \
+        development status. The score ultimately encapsulates what disaster types are the most impactful and frequent in \
+        the context of a given country. The following visualization highlights the highest risk score disaster type in each \
+        country. The map allows for a comparative analysis of how different disaster types affect countries at different development levels.")
     # Plot 7: Risk Score
     display_html("risk_score_map.html")
-
