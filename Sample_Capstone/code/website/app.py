@@ -142,9 +142,12 @@ elif selected_tab == "World Bank":
              Next, by calculating the decile for each variable and adding them together, I was able to create \
              an overall development score for each country and year on a scale from 5-50. \
              Principal component analysis was able prescribe how to add the variables together into one \
-             composite indicator for development (infant mortality was inverted for the sum). The equation is as follows, where D is the decile function:")
+             composite indicator for development (infant mortality was inverted for the sum). The equation is as follows, where $D$ is the decile function:")
     st.latex(r'''
-    Development \space Score = D(lf \space exp) + D(imort, decreasing = True) + D(co2) + D(electy) + D(GDP)
+    \begin{aligned}
+    \text{Development \space Score} &= D(\text{Life \space Expectancy}) + D(\text{Infant Mortality, decreasing}) \\ &+ D(\text{Carbon Dioxide Emitted}) 
+             + D(\text{Electricity Percentage}) \\ &+ D(\text{GDP Per Capita})
+    \end{aligned}
     ''') 
 
     st.write("Next, the development score was seperated into 3 categories: least developed, developing, \
@@ -177,7 +180,7 @@ elif selected_tab == "World Bank":
         developed. This score of risk by disaster type and country is based on the historical data in both the EM \
         DAT and World Bank datasets. It is modeled after the Risk Index used by FEMA for counties in the US. The \
         formula for FEMA's index is")
-    st.latex(r''' Risk \space Index = \frac{Expected \space Annual \space Loss × Social \space Vulnerability}{Community \space Resilience}.''')
+    st.latex(r''' \text{Risk \space Index} = \frac{\text{Expected \space Annual \space Loss} × \text{Social \space Vulnerability}}{\text{Community \space Resilience}}.''')
 
     st.write("For calculating this project's countrywide disaster risk score, 3 variables were used: impact, frequency, \
         and development score. The first 2 variables correspond to FEMA's 'Expected Annual Loss,' while the development \
@@ -185,7 +188,7 @@ elif selected_tab == "World Bank":
         FEMA's methodology with the data available. The variables were calculated, normalized to a 1-100 scale, and then combined in the \
         following way to calculate the risk score.")
 
-    st.latex(r'''Risk \space Score= .3× Frequency+ .5×Impact  +  .2×Development \space Score''')
+    st.latex(r''' \text{Risk \space Score= .3× Frequency+ .5×Impact  +  .2×Development \space Score}''')
 
     st.write("So, the risk score highlights mass casualty and frequent disaster types in addition to the given country's \
         development status. The score ultimately encapsulates what disaster types are the most impactful and frequent in \
