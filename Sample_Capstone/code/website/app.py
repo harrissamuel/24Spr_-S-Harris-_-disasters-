@@ -188,7 +188,7 @@ elif selected_tab == "World Bank":
         FEMA's methodology with the data available. The variables were calculated, normalized to a 1-100 scale, and then combined in the \
         following way to calculate the risk score.")
 
-    st.latex(r''' \text{Risk \space Score= .3× Frequency+ .5×Impact  +  .2×Development \space Score}''')
+    st.latex(r''' \text{Risk \space Score=  .25×Development \space Score + .25× Frequency + .5×Impact}''')
 
     st.write("So, the risk score highlights mass casualty and frequent disaster types in addition to the given country's \
         development status. The score ultimately encapsulates what disaster types are the most impactful and frequent in \
