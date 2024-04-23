@@ -103,7 +103,7 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
              in further discussions about disaster events. ")
     
     # Plot 2: Box plot of Cost by region
-    display_html("Violinplot_of_Total Damage, Adjusted (US$ (millions)_by_Region_(without_outliers)")
+    display_html("Violinplot_of_Total Damage, Adjusted (millions US$)_by_Region_(without_outliers)")
 
     st.write("Finally, the last plot by region shows the distribution of deaths in disaster events. We can see that Asia, Africa, and the Americas have the highest median disaster events. \
              We break it down further by subregion next to learn more.")
