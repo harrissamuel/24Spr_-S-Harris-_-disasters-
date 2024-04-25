@@ -145,7 +145,7 @@ elif selected_tab == "World Bank":
              composite indicator for development (infant mortality was inverted for the sum). The equation is as follows, where $D$ is the decile function:")
     st.latex(r'''
     \begin{aligned}
-    \text{Development \space Score} &= D(\text{Life \space Expectancy}) + D(\text{Infant Mortality, decreasing}) \\ &+ D(\text{Carbon Dioxide Emitted}) 
+    \text{Development Score} &= D(\text{Life Expectancy}) + D(\text{Infant Mortality, decreasing}) \\ &+ D(\text{Carbon Dioxide Emitted}) 
              + D(\text{Electricity Percentage}) \\ &+ D(\text{GDP Per Capita})
     \end{aligned}
     ''') 
@@ -180,7 +180,7 @@ elif selected_tab == "World Bank":
         developed. This score of risk by disaster type and country is based on the historical data in both the EM \
         DAT and World Bank datasets. It is modeled after the Risk Index used by FEMA for counties in the US. The \
         formula for FEMA's index is")
-    st.latex(r''' \text{Risk \space Index} = \frac{\text{Expected \space Annual \space Loss} × \text{Social \space Vulnerability}}{\text{Community \space Resilience}}.''')
+    st.latex(r''' \text{Risk Index} = \frac{\text{Expected Annual Loss} × \text{Social Vulnerability}}{\text{Community Resilience}}.''')
 
     st.write("For calculating this project's countrywide disaster risk score, 3 variables were used: impact, frequency, \
         and development score. The first 2 variables correspond to FEMA's 'Expected Annual Loss,' while the development \
@@ -188,7 +188,7 @@ elif selected_tab == "World Bank":
         FEMA's methodology with the data available. The variables were calculated, normalized to a 1-100 scale, and then combined in the \
         following way to calculate the risk score.")
 
-    st.latex(r''' \text{Risk \space Score=  .25×Development \space Score + .25× Frequency + .5×Impact}''')
+    st.latex(r''' \text{Risk Score = .5×Impact + .25×Development Score + .25× Frequency}''')
 
     st.write("So, the risk score highlights mass casualty and frequent disaster types in addition to the given country's \
         development status. The score ultimately encapsulates what disaster types are the most impactful and frequent in \
