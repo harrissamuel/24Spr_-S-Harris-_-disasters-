@@ -190,9 +190,9 @@ elif selected_tab == "World Bank":
     st.latex(r''' \text{Risk Index} = \frac{\text{Expected Annual Loss} × \text{Social Vulnerability}}{\text{Community Resilience}}.''')
 
     st.write("For calculating this project's countrywide disaster risk score, 3 variables were used: impact, frequency, \
-        and development score. The first 2 variables correspond to FEMA's 'Expected Annual Loss,' while the development \
+        and development score. The impact and frequency variables correspond to FEMA's 'Expected Annual Loss,' while the development \
         score inversely corresponds to 'Social Vulnerability.' These 3 variables gave the best opportunity to replicate \
-        FEMA's methodology with the data available. The variables were calculated, normalized to a 1-100 scale, and then combined in the \
+        FEMA's methodology with the data available. The variables were calculated, normalized to a 0-100 scale, and then combined in the \
         following way to calculate the risk score.")
 
     st.latex(r'''\text{Risk Score = .5×Impact + .25×Inverted Development Score  + .25×Frequency}''')
