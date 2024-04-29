@@ -105,11 +105,12 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
     # Plot 2: Box plot of Cost by region
     display_html("Violinplot_of_Total Damage, Adjusted (millions US$)_by_Region_(without_outliers)")
 
-    st.write("Finally, the last plot by region shows the distribution of deaths in disaster events. We can see that Asia, Africa, and the Americas have the highest median disaster events. \
-             We break it down further by subregion next to learn more.")
+    st.write("Finally, the last plot by region shows the distribution of deaths in disaster events. We can see that Asia, Africa, and the Americas have the highest median disaster event deaths.")
     
     # Plot 3: Box plot of Deaths by region
     display_html("Violinplot_of_Total Deaths_by_Region_(without_outliers)")
+
+    st.write("We break it down further by subregion next to learn more.")
 
     # Plot 4: Box plot of Deaths by region (asia)
     display_html("Violinplot_of_Total Deaths_by_Subregion(asia)_(without_outliers)")
@@ -125,14 +126,14 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
     
     st.subheader("Temporal Analysis:")
     st.write("Next, we break down disasters temporally. The first chart looks at disaster event counts by month. \
-             Clearly, the northen summer months seem to have the most disasters occuring, \
+             Clearly, the northen hemisphere summer months seem to have the most disasters occuring, \
              with floods being the most common disaster type.")
 
     # Plot 7: Deaths by Month
     display_html("disasters_by_month")
 
     st.write("One more chart breaks down disasters by event duration. Most disasters occur on the same day, like tornadoes or tsunamis, but \
-             others like epidemics or droughts occur over multiple days. The following chart shows the distrubution of disaster events \
+             others like epidemics or droughts occur over multiple days, weeks, or months. The following chart shows the distrubution of disaster events \
              by event duration.")
 
     # Plot 8: Lengths of Disaster
@@ -144,7 +145,7 @@ elif selected_tab == "World Bank":
     # Plot 1: Individual Variables with Death
     #display_html("Subplots_WB")
     st.write("By merging the EM DAT and World Bank data by country and year, values for a country's GDP per capita, infant mortality rate, \
-             life expectancy, electricity percentage, and tonnes of CO2 emitted were applied each disaster event. \
+             life expectancy, electricity percentage, and tonnes of CO2 emitted were applied to each disaster event. \
              This provided each disaster event with context of the country in which it happened. \
              Next, by calculating the decile for each variable and adding them together, I was able to create \
              an overall development score for each country and year on a scale from 5-50. \
@@ -178,8 +179,8 @@ elif selected_tab == "World Bank":
 
     st.write("From the median deaths by development score plot, we are able to see that median deaths go down \
         as the development score increases. Specifically, there seem to be some dramatic drops in median deaths \
-        as we cross over from each development category at 20 and 35 respectively. Additionally, the median disaster \
-        event in a least developed country is at least three times more deadly than a disaster in a developed country.")
+        as we cross over from each development category at around 20 and 35 respectively. Additionally, the median disaster \
+        event in a least developed country is at least three times more deadly than the median disaster in a developed country.")
 
     st.subheader("Risk Score:")
 
