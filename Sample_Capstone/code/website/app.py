@@ -84,7 +84,7 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
     st.title("Temporal and Spatial Exploratory Analysis:")
     st.subheader("Spatial Analysis:")
     st.write("To visualize the impact of disasters spatially, it still could be useful to show total deaths by reigon. \
-             However, due to outlier disaster events (like the 2004 Boxing Day Tsunami), these measures may be right skewed to extent where they are not useful \
+             However, due to outlier disaster events (like the 2004 Boxing Day Tsunami), these measures may be right skewed to the extent where they are not useful \
              for meausuring the typical disaster in the region. For this reason, violin/box plots are shown below \
              to visualize the distrubution of typical disasters (with major outliers dropped). ")
     
@@ -124,9 +124,16 @@ elif selected_tab == "Temporal and Spatial Exploratory Analysis":
              indicating a spatial trend for disaster event deaths.")
     
     st.subheader("Temporal Analysis:")
+    st.write("Next, we break down disasters temporally. The first chart looks at disaster event counts by month. \
+             Clearly, the northen summer months seem to have the most disasters occuring, \
+             with floods being the most common disaster type.")
 
     # Plot 7: Deaths by Month
     display_html("disasters_by_month")
+
+    st.write("One more chart breaks down disasters by event duration. Most disasters occur on the same day, like tornadoes or tsunamis, but \
+             others like epidemics or droughts occur over multiple days. The following chart shows the distrubution of disaster events \
+             by event duration.")
 
     # Plot 8: Lengths of Disaster
     display_html("length_of_disaster_plot")
@@ -136,7 +143,7 @@ elif selected_tab == "World Bank":
     st.write("Disaster analysis based on EM DAT Data and World Bank variables.")
     # Plot 1: Individual Variables with Death
     #display_html("Subplots_WB")
-    st.write("By merging the datsets by country and year, values for a country's GDP per capita, infant mortality rate, \
+    st.write("By merging the EM DAT and World Bank data by country and year, values for a country's GDP per capita, infant mortality rate, \
              life expectancy, electricity percentage, and tonnes of CO2 emitted were applied each disaster event. \
              This provided each disaster event with context of the country in which it happened. \
              Next, by calculating the decile for each variable and adding them together, I was able to create \
