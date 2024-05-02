@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import os
 
 # Function to display HTML file if exists
@@ -22,7 +23,7 @@ def display_html(html_file_name):
             """,
             unsafe_allow_html=True,
         )
-        st.components.v1.html(plotly_map_html, width=800, height=600)
+        components.html(plotly_map_html, width=800, height=600)
     else:
         st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
         st.write("File not found:", html_file_path)  # Debug print
