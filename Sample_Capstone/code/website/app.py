@@ -22,7 +22,7 @@ def display_html(html_file_name):
             """,
             unsafe_allow_html=True,
         )
-        st.components.html(plotly_map_html, width=800, height=600)
+        st.components.v1.html(plotly_map_html, width=800, height=600)
     else:
         st.error("HTML file not found. Please make sure it exists in the same directory as your app.py.")
         st.write("File not found:", html_file_path)  # Debug print
