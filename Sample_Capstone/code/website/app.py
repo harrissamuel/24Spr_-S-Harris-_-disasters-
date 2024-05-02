@@ -32,7 +32,7 @@ with st.sidebar:
     selected_tab = st.radio("Navigation", ["Overview", "Temporal and Spatial Exploratory Analysis", "World Bank"])
 
 # Display content based on selected tab
-if selected_tab == "Overview":
+if selected_tab == "Project Overview":
     st.title("Contextualizing Disasters: Analyzing Disaster Events by Development")
     st.subheader("Introduction and Objective:")
 
