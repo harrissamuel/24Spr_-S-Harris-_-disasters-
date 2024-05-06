@@ -30,7 +30,7 @@ def display_html(html_file_name):
 
 # Create tabs
 with st.sidebar:
-    selected_tab = st.radio("Navigation", ["Overview", "Temporal and Spatial Exploratory Analysis", "World Bank"])
+    selected_tab = st.radio("Navigation", ["Overview", "Spatial and Temporal Exploratory Analysis", "World Bank"])
 
 # Display content based on selected tab
 if selected_tab == "Overview":
@@ -81,8 +81,8 @@ if selected_tab == "Overview":
              the EM DAT data with the world bank indicator variables, let's further analyze the EM DAT data \
              spatially and temporally in the next section to better understand disaster events in the 21st century more broadly.")
         
-elif selected_tab == "Temporal and Spatial Exploratory Analysis":
-    st.title("Temporal and Spatial Exploratory Analysis:")
+elif selected_tab == "Spatial and Temporal Exploratory Analysis":
+    st.title("Spatial and Temporal Exploratory Analysis:")
     st.subheader("Spatial Analysis:")
     st.write("To visualize the impact of disasters spatially, it still could be useful to show total deaths by reigon. \
              However, due to outlier disaster events (like the 2004 Boxing Day Tsunami), these measures may be right skewed to the extent where they are not useful \
