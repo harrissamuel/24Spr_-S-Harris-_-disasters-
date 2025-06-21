@@ -30,7 +30,7 @@ def display_html(html_file_name):
 
 # Create tabs
 with st.sidebar:
-    selected_tab = st.radio("Navigation", ["Overview", "Spatial and Temporal Exploratory Analysis", "World Bank"])
+    selected_tab = st.radio("Navigation", ["Overview", "Spatial and Temporal Exploratory Analysis", "World Bank Analysis and Final Risk Score", "Conclusion"])
 
 # Display content based on selected tab
 if selected_tab == "Overview":
@@ -140,7 +140,7 @@ elif selected_tab == "Spatial and Temporal Exploratory Analysis":
     # Plot 8: Lengths of Disaster
     display_html("length_of_disaster_plot")
 
-elif selected_tab == "World Bank":
+elif selected_tab == "World Bank Analysis and Final Risk Score":
     st.title("World Bank Disaster Analysis")
     st.write("Disaster analysis based on EM DAT Data and World Bank variables.")
     # Plot 1: Individual Variables with Death
@@ -205,3 +205,19 @@ elif selected_tab == "World Bank":
         country. The map allows for a comparative analysis of how different disaster types affect countries at different development levels.")
     # Plot 7: Risk Score
     display_html("risk_score_map.html")
+
+
+elif selected_tab == "Conclusion":
+    st.title("Conclusion")
+
+    st.subheader("Limitations")
+
+    st.write("Limitations in this project concern the datasets and methods. For EM DAT, the dataset’s generality can hold back some deeper patterns about specific disaster types. The data is also gathered from wildly different sources which can lead to the biases previously mentioned in the datasets section. To expand on the analysis in this project, it is recommended to dive deeper into specific disaster types and perhaps find a better dataset that better suits a certain disaster type’s data characteristics.")
+
+    st.write("Furthermore, the methods in this project could likely be improved. Specifically, other development score calculations could be applied to disaster events that may produce more accurate development measures. Additionally, the risk score calculation could be improved with a new statistic measuring community resilience. The risk score in this project mostly takes into account only impact and social vulnerability, a resilience statistic would improve the score significantly.")
+
+    st.subheader("Implications and Future")
+
+    st.write("The analysis and mapping of disasters in this project demonstrated many trends in world disaster events. The first obvious conclusion of this project is the presence of outlier deadly disaster events. These events have a high impact, often causing many times the deaths of all total disaster events in other years. The outliers also mostly occur in less developed countries. Another conclusion is the spatial trends in the data. Specifically, disasters in Africa and Asia have a higher overall median death toll in disaster events. Temporal trends also highlight that disasters are usually one-day events. By looking at disasters grouped by development, it was determined that disaster types occur at roughly the same ratios in each development type. However, despite similar ratios, the median death toll was shown to be at least three times higher in the least developed countries compared to the developed countries. Finally, this project demonstrated the value of calculating a risk score for countries. The score allows for both the identification of risky disaster types in countries and the comparison between countries.")
+
+    st.write("Ultimately, this project was completed to mitigate the impact of disasters by helping officials in disaster management. The visualizations and risk scores presented in this analysis will hopefully be used to identify countries that require more assistance with disaster management efforts. In addition, this project will help spread awareness about the importance of disaster preparedness. While this project helps mitigate disasters’ impact, the lack of current research being done to understand past disasters and their trends is concerning. As climate change results in more intense disasters, more research must be done to understand past disasters so that humanity can be adequately prepared for unexpected future disasters.")
